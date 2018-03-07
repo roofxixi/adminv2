@@ -1,0 +1,8 @@
+{
+  "name": "adminv2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/roofxixi/adminv2.git",
+  "author": "roofxixi <roofxixi@163.com>",
+  "license": "MIT"
+}
