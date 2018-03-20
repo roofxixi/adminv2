@@ -4,23 +4,34 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var webpack = require('webpack');
 
 var getHtml = function (Url, name) {
-  console.log('测试',path.resolve(__dirname, 'src/page'));
+  console.log('测试', path.resolve(__dirname, 'src/page'));
   return new HtmlWebpackPlugin({
     title: name,
     filename: Url + '.html',
     template: 'src/' + Url + '.html',
-    favicon:'./favicon.ico'
+    favicon: './favicon.ico'
   })
 }
 
 module.exports = {
   //webpack-dev-server
   devServer: {
-    port:8086,
+    port: 9999,
     //404错误就惠到这个界面
-    historyApiFallback:{
-      index:'/dist/index.html'
-  }
+    historyApiFallback: {
+      index: '/dist/index.html'
+    },
+    //这个就是dev代理
+    proxy: {
+      '/manage': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      },
+      '/user/logout.do': {
+        target: 'http://admintest.happymmall.com',
+        changeOrigin: true
+      }
+    }
   },
   //入口
   entry: './src/app.jsx',
@@ -35,7 +46,7 @@ module.exports = {
     alias: {
       '@': path.resolve(__dirname, 'src'),
       'Page': path.resolve(__dirname, 'src/page'),
-      'Component':path.resolve(__dirname,'src/component')
+      'Component': path.resolve(__dirname, 'src/component')
     }
   },
   plugins: [

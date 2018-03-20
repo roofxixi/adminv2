@@ -24,7 +24,6 @@ class NavSide extends React.Component {
       ]
     }
   }
-
   render() {
     return (
       <div className="navbar-default navbar-side" role="navigation">
@@ -40,7 +39,7 @@ class NavSide extends React.Component {
 
             <li className='active'>
             {/*二级菜单*/}
-            <Link to="/product" className=""><i className="fa fa-sitemap "></i>商品<span
+            <Link to="/product" className=""><i className="fa fa-list "></i>商品<span
             className="fa arrow"></span></Link>
             <ul className="nav nav-second-level collapse in">
             <li>
@@ -53,7 +52,7 @@ class NavSide extends React.Component {
             </li>
             <li className='active'>
             {/*二级菜单*/}
-            <Link to="/order" className=""><i className="fa fa-sitemap "></i>订单<span
+            <Link to="/order" className=""><i className="fa fa-check-square-o "></i>订单<span
             className="fa arrow"></span></Link>
             <ul className="nav nav-second-level collapse in">
             <li>
@@ -63,7 +62,7 @@ class NavSide extends React.Component {
             </li>
             <li className='active'>
             {/*二级菜单*/}
-            <Link to="/user" className=""><i className="fa fa-sitemap "></i>用户<span
+            <Link to="/user" className=""><i className="fa fa-user-o "></i>用户<span
             className="fa arrow"></span></Link>
             <ul className="nav nav-second-level collapse in">
             <li>
